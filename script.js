@@ -82,8 +82,9 @@ console.log(acronimo(string).join("")) */
 
 
 //* ESERCIZIO 1 EXTRA 
-
+//*1. Partendo da una stringa (passata come parametro), ritorna il carattere più usato nella stringa stessa.
 /* let string = "i topi non avevano nipoti";
+
 function maxChar(string) {
     let strObj = {};
     let max = "";
@@ -110,28 +111,15 @@ console.log("Il vincitore è: " + maxChar(string)[0] + " con " + maxChar(string)
 
 //* ESERCIZIO 2 EXTRA
 
-/* let str1 = "asd";
-let str2 = "ads";
+/* let str1 = "agsdd";
+let str2 = "  ad!!. .d Sg";
 
-let final1 = str1.split("").sort().join();
-let final2 = str2.split("").sort().join();
-console.log(final1, final2)
-function anagramma(final1, final2) {
-    let first = {};
-    let second = {};
-    for (const char of final1) {
-        first[char] = first[char] + 1 || 1;
-    }
-    for (const char of final2) {
-        second[char] = second[char] + 1 || 1;
-    }
-    console.log(first, second)
-    for (const key in second) {
-        if (first[key] === second[key]) continue
-        else return "fail"
-    }
-   
-    return "anagramma"
+function anagramma(str1, str2) {
+    let final1 = str1.toLowerCase().replace(/[/\s/.,\/#!$%\^&\*;:{}=\-_`~()\/s]/g,"").split("").sort().join("");
+    let final2 = str2.toLowerCase().replace(/[/\s/.,\/#!$%\^&\*;:{}=\-_`~()\/s]/g,"").split("").sort().join("");
+    if (final1 === final2) return "anagramma";
+
+    return "non anagramma";
 }
 console.log(anagramma(str1, str2));  */
 
@@ -251,9 +239,33 @@ arraySplitter(array, y) */
 
 //*ESERCIZIO 9 EXTRA
 
-//*ESERCiZIO 10 EXTRA
+/* let num = 12;
+function createPyramid(num) {
+    let maxChar = num+num-1;
+    for (let i = 1; i <= num; i++) {
+        let nCanc = i+i-1;
+        let nSpazi = maxChar - nCanc;
 
-let x = 6;
+        console.log(".".repeat(nSpazi/2) + "#".repeat(nCanc) + ".".repeat(nSpazi/2))
+    }
+}
+createPyramid(num)
+ */
+   
+
+
+
+//*ESERCiZIO 10 EXTRA
+//* 10. Scrivi una funzione che accetti un intero N e ritorni una matrice a spirale NxN:
+
+/* 1, 2, 3,
+   6, 5, 4,
+   7, 8, 9, */
+
+   /* 1, 2,
+      4, 3, */
+
+/* let x = 6;
 let total = x * x;
 console.log(total) 
 function matrix(x) {
@@ -267,4 +279,4 @@ function matrix(x) {
     }
 }
 
-matrix(x)
+matrix(x) */
